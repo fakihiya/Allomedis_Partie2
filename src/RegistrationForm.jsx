@@ -146,6 +146,14 @@ const RegistrationForm = () => {
               Register
             </button>
 
+            <p className="text-white text-sm text-center mt-6">Don't have an account?
+            <button onClick={()=> navigate('/Login-form')}
+                    className="text-yellow-400 font-semibold hover:underline ml-1 whitespace-nowrap"
+            >
+            Login here
+            </button>
+            </p>
+
             {/* Message Display */}
             {message && (
               <div className={`mt-4 text-center ${message.includes("successful") ? "text-green-500" : "text-red-500"}`}>
