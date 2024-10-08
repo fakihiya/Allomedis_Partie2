@@ -1,6 +1,9 @@
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const RegistrationForm = () => {
   const navigate = useNavigate();
@@ -11,6 +14,7 @@ const RegistrationForm = () => {
   const [email, setEmail] = useState(""); // Email state
   const [message, setMessage] = useState(""); // Message state
   const [isEmailValid, setIsEmailValid] = useState(false); // Email validation state
+
 
   // Password validation
   const checkPasswordStrength = (pass) => {
@@ -47,14 +51,15 @@ const RegistrationForm = () => {
         email,
         password,
       });
+      
 
       if (response.status === 201) {
-        setMessage("Registration successful! Redirecting to login...");
+        toast.success("Registration successful! Virify You Email");        
         setTimeout(() => {
           navigate("/login-form");
-        }, 2000); // Redirect after 2 seconds
+        }, 10000); // Redirect after 2 seconds
       } else {
-        setMessage(response.data.message || "Registration failed.");
+        toast.error(response.data.message || "Registration failed.");
       }
     } catch (error) {
       setMessage(error.response?.data?.message || "Error connecting to the server.");
@@ -83,8 +88,8 @@ const RegistrationForm = () => {
 
             {/* Username Input */}
             <div className="mt-8">
-              <label className="text-white text-xs font-bold block mb-2">Username</label>
-              <input
+              <label className="text-white text-xs font-bold block mb-2" >Username</label>
+              <input 
                 name="username"
                 type="text"
                 value={username}
@@ -145,8 +150,11 @@ const RegistrationForm = () => {
             >
               Register
             </button>
+                  
+            {/* Toast Container */}
+            <ToastContainer />
 
-            <p className="text-white text-sm text-center mt-6">Don't have an account?
+            <p className="text-white text-sm text-center mt-6">Dont have an account?
             <button onClick={()=> navigate('/Login-form')}
                     className="text-yellow-400 font-semibold hover:underline ml-1 whitespace-nowrap"
             >
@@ -168,3 +176,4 @@ const RegistrationForm = () => {
 };
 
 export default RegistrationForm;
+

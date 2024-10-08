@@ -27,7 +27,7 @@ function App() {
     // </div>
     <Router>
     <Routes>
-      <Route path="/" element={<RegistrationForm />} />
+      <Route path="/registration-form" element={<RegistrationForm />} />
       <Route path="/otp" element={<LoggedInPage />} />
       <Route path="/login-form" element={<LoginForm />} />
     </Routes>
