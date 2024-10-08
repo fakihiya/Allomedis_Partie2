@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -47,7 +47,7 @@ const LoginForm = () => {
 
           <form className="md:max-w-md w-full mx-auto" onSubmit={handleLogin}>
             <div className="mb-12">
-              <h3 className="text-4xl font-extrabold text-yellow-400">Sign in</h3>
+              <h3 className="text-4xl font-extrabold text-[#007F81]">Sign in</h3>
             </div>
 
             <div>
@@ -84,7 +84,7 @@ const LoginForm = () => {
                 </label>
               </div>
               <div>
-                <a href="jajvascript:void(0);" className="text-yellow-400 font-semibold text-sm hover:underline">
+                <a href="jajvascript:void(0);" className="text-[#007F81] font-semibold text-sm hover:underline">
                   Forgot Password?
                 </a>
               </div>
@@ -92,15 +92,15 @@ const LoginForm = () => {
 
             <div className="mt-12">
               <button type="submit" 
-                            className="w-full mt-8 py-3 text-lg text-white rounded-md border-none bg-yellow-400 font-semibold shadow-md">
+                            className="w-full mt-8 py-3 text-lg text-white rounded-md border-none bg-[#007F81] font-semibold shadow-md">
                 Sign in
               </button>
               {message && <p>{message}</p>}
 
-              <p className="text-gray-800 text-sm text-center mt-6">Don't have an account?
+              <p className="text-gray-800 text-sm text-center mt-6">Dont have an account?
 
                 <button onClick={()=> navigate('/registration-form')}
-                        className="text-yellow-400 font-semibold hover:underline ml-1 whitespace-nowrap"
+                        className="text-[#007F81] font-semibold hover:underline ml-1 whitespace-nowrap"
                 >
                 Register here
                 </button>
