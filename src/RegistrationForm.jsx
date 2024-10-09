@@ -63,13 +63,12 @@ const buttonisdisbled =
         toast.success("Registration successful! Virify You Email");        
         setTimeout(() => {
           navigate("/login-form");
-        }, 2000); // Redirect after 2 seconds
+        }, 2000); 
       } else {
         toast.error(response.data.message || "Registration failed.");
       }
     } catch (error) {
       toast.error("Error connecting to the server");        
-
       console.error("Registration error:", error);
     }
   };

@@ -11,8 +11,6 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const { setUserEmail } = useUser();
 
-  console.log("User email set to:", email); 
-
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -29,17 +27,18 @@ const LoginForm = () => {
         }
       );
 
-      console.log(response.data);
-      if ("sssss",response.status === 200) {
+      if (response.status === 200) {
         setUserEmail(email); // Store email in context
         
         toast.success("Login successful!");
-        navigate("/otp"); 
+        setTimeout(() => {
+               navigate("/otp"); 
+        }, 1000);
       } else {
         toast.error("Login failed.");
       }
     } catch (error) {
-      toast.error("Error connecting to the server.");
+      toast.error("Login failed.");
       console.error("Login error:", error);
     }
   };
