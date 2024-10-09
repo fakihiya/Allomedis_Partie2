@@ -47,7 +47,6 @@ const buttonisdisbled =
 
     if (!username || !email || !password || !isEmailValid) {
       toast.info("Please enter your info");        
-
       return;
     }
 
