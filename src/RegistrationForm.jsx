@@ -21,7 +21,7 @@ const buttonisdisbled =
   username == ""|| 
     password == ""|| email == "";
   
-  // Password validation
+
   const checkPasswordStrength = (pass) => {
     let strength = 0;
     if (pass.length > 8) strength += 20;
@@ -33,7 +33,7 @@ const buttonisdisbled =
     setPassword(pass);
   };
 
-  // Email validation
+ 
   const handleEmailChange = (e) => {
     const value = e.target.value;
     setEmail(value);
@@ -41,7 +41,7 @@ const buttonisdisbled =
     setIsEmailValid(emailPattern.test(value));
   };
 
-  // Handle Registration
+ 
   const handleRegistration = async (e) => {
     e.preventDefault();
 
@@ -63,7 +63,7 @@ const buttonisdisbled =
         toast.success("Registration successful! Virify You Email");        
         setTimeout(() => {
           navigate("/login-form");
-        }, 10000); // Redirect after 2 seconds
+        }, 2000); // Redirect after 2 seconds
       } else {
         toast.error(response.data.message || "Registration failed.");
       }
