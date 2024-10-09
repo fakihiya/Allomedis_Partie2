@@ -39,8 +39,8 @@ const LoggedInPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white">
-      <div className="w-full max-w-md bg-[#007F81] rounded-lg shadow-lg p-8">
+    <div className="flex items-center justify-center min-h-screen bg-[#f9f9f9]">
+      <div className="w-full max-w-md bg-[#96adad] rounded-lg shadow-lg p-8">
         <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">Verify Your OTP</h1>
         <form onSubmit={handleOtpSubmit} className="space-y-4">
           <input
@@ -53,17 +53,25 @@ const LoggedInPage = () => {
           />
           <button
             type="submit"
-            className="w-full bg-[#2a4ba7] text-white py-2 rounded-md hover:bg-[#171758] transition duration-300"
+            className="w-full bg-[#007F81] text-white py-2 rounded-md hover:bg-[#171758] transition duration-300"
           >
             Submit OTP
           </button>
         </form>
         <ToastContainer />   
-        {message && (
+                  
+                  <button
+                    onClick={() => navigate("/registration-form")}
+                    className="text-black font-semibold hover:underline ml-64 whitespace-nowrap"
+                  >
+                    Resend OTP ?
+                  </button>
+              
+        {/* {message && (
           <p className="mt-4 text-green-500 text-center font-semibold">
             {message}
           </p>
-        )}
+        )} */}
       </div>
     </div>
   );
