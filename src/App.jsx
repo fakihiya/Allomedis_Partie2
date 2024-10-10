@@ -6,6 +6,7 @@ import LoggedInPage from "./LoggedInPage";
 import { UserProvider } from "./UserContext.jsx";  
 import "./index.css";
 import ForgotPassword from "./ForgotPassword.jsx";
+import ResetPassword from "./ResetPassword.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/registration-form" element={<RegistrationForm />} />
           <Route path="/otp" element={<LoggedInPage />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/login-form" element={<LoginForm />} />
         </Routes>
       </Router>
