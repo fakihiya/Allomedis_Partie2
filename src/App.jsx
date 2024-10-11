@@ -7,6 +7,8 @@ import { UserProvider } from "./UserContext.jsx";
 import "./index.css";
 import ForgotPassword from "./ForgotPassword.jsx";
 import ResetPassword from "./ResetPassword.jsx";
+import  Home from "./Home.jsx";
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/login-form" element={<LoginForm />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </Router>
     </UserProvider>

@@ -14,14 +14,17 @@ const LoggedInPage = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
+        
         "http://localhost:3000/api/users/verify-otp",
         {
           email: userEmail,
           otp: otpcode,
         }
       );
+      const data =  res.data;
 
       if (res.status === 200) {
+        localStorage.setItem('token',data.token)
         setUserEmail(userEmail);
         toast.success("OTP verified successfully");
         navigate("/");

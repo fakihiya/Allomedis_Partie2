@@ -107,12 +107,12 @@ const LoginForm = () => {
                   </label>
                 </div>
                 <div>
-                  <a
-                    href="javascript:void(0);"
+                  <button
+                   onClick={() => navigate('/forgot-password')}
                     className="text-[#007F81] font-semibold text-sm hover:underline"
                   >
                     Forgot Password?
-                  </a>
+                  </button>
                 </div>
               </div>
 
