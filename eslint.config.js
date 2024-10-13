@@ -23,6 +23,20 @@ export default [
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
     },
+    {
+      "env": {
+        "browser": true,
+        "es2021": true,
+        "cypress/globals": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:cypress/recommended"
+      ],
+      "plugins": [
+        "cypress"
+      ],
+    
     rules: {
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
