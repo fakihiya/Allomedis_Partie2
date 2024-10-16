@@ -25,15 +25,29 @@ const LoginForm = () => {
           email,
           password,
         }
-      );
+      ); 
 
+      const data = response.data;
       if (response.status === 200) {
-        setUserEmail(email); // Store email in context
-        
-        toast.success("Login successful!");
-        setTimeout(() => {
-               navigate("/otp"); 
-        }, 1000);
+        localStorage.setItem('token',data.token)
+
+        const {message} = response.data;
+        if(message === 'OTP sent to your email'){
+          setUserEmail(email); 
+          toast.success("OTP sent! Please check your email.");
+          setTimeout(() => {
+                      navigate("/otp"); 
+                }, 1000);
+
+        }
+        else{
+          toast.success("Login successful!");
+            setTimeout(() => {
+              navigate("/home"); 
+            }, 1000);
+        }
+      
+      
       } else {
         toast.error("Login failed.");
       }
