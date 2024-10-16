@@ -25,7 +25,7 @@ const LoginForm = () => {
           email,
           password,
         }
-      );
+      ); 
 
       const data = response.data;
       if (response.status === 200) {

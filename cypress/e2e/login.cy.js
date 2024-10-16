@@ -1,4 +1,3 @@
-// cypress/integration/login.spec.js
 
 describe('Login Page', () => {
   beforeEach(() => {
@@ -30,7 +29,7 @@ describe('Login Page', () => {
 
   it('should navigate to registration page', () => {
     cy.contains('Register here').click();
-    cy.url().should('include', '/registration-form');
+    cy.url().should('include', '/registration-form'); 
   });
 
   // it('should show error for empty fields', () => {
